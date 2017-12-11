@@ -14,7 +14,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  *    注解@ComponentScan默认扫描与Application类同级包以及子包下包含@Component的类，创建为bean;
  *    这里扫描com.lanhuigu.spring包下包含@Component类创建为bean。
  * 4. 如果不想使用@ComponentScan默认扫描包，可以通过basePackages显示指定,
- *    比如: @ComponentScan(basePackages = "com.lanhuigu.spring")
+ *    比如: @ComponentScan(basePackages = {"com.lanhuigu.spring"})
+ *    同时basePackages默认参数是数组，如果想指定多个扫描包,用逗号隔开就行。
+ *    注解@ComponentScan还有另外一种方式就是通过basePackageClasses显示指定，
+ *    比如: @ComponentScan(basePackageClasses = {HelloServiceImpl.class})
+ *    含义就是扫描HelloServiceImpl类所在的包，也即是通过类反推出扫描包。
  * 5. 默认创建bean的ID为注解@Component对应类首字母小写，比如:
  *    @Component
  *    public class HelloServiceImpl implements HelloService{
@@ -27,7 +31,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  *    }
  *    创建出来的bean的ID就为helloService。
  * 6. spring除了@Component指定创建bean外，也可以用@Named替代，大部分情况下两者
- *    是可以互换的，但是一般建议用@Component，直观而且大家都能看懂。
+ *    是可以互换的，个人偏好使用@Component。
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ApplicationConfig.class)
