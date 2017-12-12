@@ -11,6 +11,7 @@
     <!-- 子模块 -->
     <modules>
         <module>spring-hello</module>
+        <module>spring-hello-xml</module>
     </modules>
     <!-- 版本配置 -->
     <properties>

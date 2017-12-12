@@ -10,9 +10,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * 1. SpringJUnit4ClassRunner测试启动时，自动创建spring应用上下文；
  * 2. 注解@ContextConfiguration会告诉它需要在ApplicationConfig加载配置；
  * 3. 而在ApplicationConfig类中包含@Configuration，@ComponentScan，
- *    则注解@Configuration开启组件扫描，spring默认是关闭的;
- *    注解@ComponentScan默认扫描与Application类同级包以及子包下包含@Component的类，创建为bean;
- *    这里扫描com.lanhuigu.spring包下包含@Component类创建为bean。
+ *    注解@ComponentScan开启组件扫描，spring默认是关闭的;
+ *    注解@ComponentScan默认扫描与ApplicationConfig类同级包以
+ *    及子包下包含@Component的类，spring上下文创建为一个bean;
  * 4. 如果不想使用@ComponentScan默认扫描包，可以通过basePackages显示指定,
  *    比如: @ComponentScan(basePackages = {"com.lanhuigu.spring"})
  *    同时basePackages默认参数是数组，如果想指定多个扫描包,用逗号隔开就行。
