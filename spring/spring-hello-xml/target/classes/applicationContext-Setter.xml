@@ -36,7 +36,7 @@
                 <value>set3</value>
             </set>
         </property>
-        <!--List集合的属性注入  -->
+        <!-- List集合的属性注入 -->
         <property name="list">
             <list>
                 <value>list1</value>
@@ -44,16 +44,15 @@
                 <value>list3</value>
             </list>
         </property>
-        <!--数组的注入  -->
+        <!-- 数组的注入 -->
         <property name="array">
             <list>
                 <value>array1</value>
                 <value>array1</value>
                 <value>array1</value>
             </list>
-
         </property>
-        <!--Map集合的属性注入  -->
+        <!-- Map集合的属性注入 -->
         <property name="map">
             <map>
                 <entry key="key1" value="map1"></entry>
@@ -62,6 +61,5 @@
             </map>
         </property>
     </bean>
-
 
 </beans>

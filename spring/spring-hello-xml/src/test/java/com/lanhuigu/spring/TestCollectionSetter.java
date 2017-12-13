@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * 测试setter注入字面量
+ * 测试setter注入集合
  */
 public class TestCollectionSetter {
 

@@ -1,6 +1,6 @@
 package com.lanhuigu.spring;
 
-import com.lanhuigu.spring.constructor.SelfIntroductionService;
+import com.lanhuigu.spring.setter.SelfIntroductionService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
