@@ -15,18 +15,18 @@ public class Person {
     private String hobby;
 
     /**
-     * 构造器注入时打开
+     * 构造器注入时打开构造器--setter注入时注释掉构造器
      * @param name
      * @param sex
      * @param age
      * @param hobby
      */
-    /*public Person(String name, String sex, int age, String hobby) {
+    public Person(String name, String sex, int age, String hobby) {
         this.name = name;
         this.sex = sex;
         this.age = age;
         this.hobby = hobby;
-    }*/
+    }
 
     public String getName() {
         return name;
