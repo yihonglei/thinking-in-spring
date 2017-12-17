@@ -12,6 +12,8 @@
     <modules>
         <module>spring-hello</module>
         <module>spring-hello-xml</module>
+        <module>spring-aop-annotation</module>
+        <module>spring-aop-xml</module>
     </modules>
     <!-- 版本配置 -->
     <properties>
@@ -19,6 +21,10 @@
         <spring.version>4.3.10.RELEASE</spring.version>
         <junit-version>4.12</junit-version>
         <java.version>1.8</java.version>
+        <aopalliance.version>1.0</aopalliance.version>
+        <aspectjrt.version>1.7.3</aspectjrt.version>
+        <aspectjweaver.version>1.7.4</aspectjweaver.version>
+        <cglib-nodep.version>2.1_3</cglib-nodep.version>
     </properties>
     <!-- jar包依赖 -->
     <dependencies>
@@ -39,6 +45,32 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+        <!-- spring aop 依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>aopalliance</groupId>
+            <artifactId>aopalliance</artifactId>
+            <version>${aopalliance.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectjrt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectjweaver.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>${cglib-nodep.version}</version>
         </dependency>
     </dependencies>
     <!-- 打包 -->

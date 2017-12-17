@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!-- 启用AspectJ自动代理 -->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <!-- bean定义 -->
+    <bean id="conferenceService" class="com.lanhuigu.spring.ConferenceServiceImpl"/>
+
+    <!-- 切面类 -->
+    <bean id="person" class="com.lanhuigu.spring.Person"/>
+
+    <!--
+       在<aop:config>中我们可以声明一个活多个通知器、切面或者切点。
+     -->
+    <aop:config>
+        <aop:aspect ref="person">
+            <!-- 前置通知 -->
+            <aop:before pointcut="execution(* com.lanhuigu.spring.ConferenceServiceImpl.conference(..))"
+                        method="takeSeats" />
+            <!-- 前置通知 -->
+            <aop:before pointcut="execution(* com.lanhuigu.spring.ConferenceServiceImpl.conference(..))"
+                        method="silenceCellPhones" />
+            <!-- 后置通知 -->
+            <aop:after pointcut="execution(* com.lanhuigu.spring.ConferenceServiceImpl.conference(..))"
+                        method="summary" />
+        </aop:aspect>
+    </aop:config>
+
+    <!--
+       在上面的配置中，切入点的定义是一样的，我们看到execution中的内容都是一样，
+       我们可以使用类似@Pointcut注解方式的元素<aop:pointcut>将其提出为公用部分,
+       而使用切点表达式的地方通过pointcut-ref引入。优化之后效果如下。
+     -->
+    <!--<aop:config>
+        <aop:aspect ref="person">
+            &lt;!&ndash; 定义切点 &ndash;&gt;
+            <aop:pointcut id="conference"
+                          expression="execution(* com.lanhuigu.spring.ConferenceServiceImpl.conference(..))"/>
+            &lt;!&ndash; 前置通知 &ndash;&gt;
+            <aop:before pointcut-ref="conference"
+                        method="takeSeats" />
+            &lt;!&ndash; 前置通知 &ndash;&gt;
+            <aop:before pointcut-ref="conference"
+                        method="silenceCellPhones" />
+            &lt;!&ndash; 后置通知 &ndash;&gt;
+            <aop:after pointcut-ref="conference"
+                       method="summary" />
+        </aop:aspect>
+    </aop:config>-->
+
+</beans>
