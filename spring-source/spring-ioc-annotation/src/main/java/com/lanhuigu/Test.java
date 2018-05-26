@@ -4,10 +4,13 @@ import javafx.application.Application;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.support.BeanDefinitionReader;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.Resource;
 
 
@@ -25,8 +28,12 @@ public class Test {
         XmlBeanFactory;
         DefaultListableBeanFactory;
         ApplicationContext;
+        FileSystemXmlApplicationContext;
+        ClassPathXmlApplicationContext;
         ConfigurableApplicationContext;
         Resource;
-        BeanDefinition;*/
+        BeanDefinition;
+        BeanDefinitionReader;*/
+
     }
 }
