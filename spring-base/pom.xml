@@ -26,7 +26,7 @@
         <aopalliance.version>1.0</aopalliance.version>
         <aspectjrt.version>1.7.3</aspectjrt.version>
         <aspectjweaver.version>1.7.4</aspectjweaver.version>
-        <cglib-nodep.version>2.1_3</cglib-nodep.version>
+        <cglib.version>3.2.5</cglib.version>
     </properties>
     <!-- jar包依赖 -->
     <dependencies>
@@ -71,8 +71,8 @@
         </dependency>
         <dependency>
             <groupId>cglib</groupId>
-            <artifactId>cglib-nodep</artifactId>
-            <version>${cglib-nodep.version}</version>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
         </dependency>
     </dependencies>
     <!-- 打包 -->
