@@ -1,5 +1,6 @@
 package com.lanhuigu.spring;
 
+import net.sf.cglib.proxy.MethodProxy;
 import org.springframework.aop.framework.ProxyFactoryBean;
 
 /**

@@ -7,7 +7,7 @@ import net.sf.cglib.proxy.MethodProxy;
 import java.lang.reflect.Method;
 
 /**
- * CGLibProxy动态代理类
+ * CGLibProxy动态代理类，invoke使用被代理对象
  */
 public class CGLibProxy implements MethodInterceptor {
     /** CGLib需要代理的目标对象 */

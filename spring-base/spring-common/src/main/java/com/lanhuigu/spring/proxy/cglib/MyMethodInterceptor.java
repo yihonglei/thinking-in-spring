@@ -6,7 +6,7 @@ import net.sf.cglib.proxy.MethodProxy;
 import java.lang.reflect.Method;
 
 /**
- * 自定义MethodInterceptor
+ * 自定义MethodInterceptor，invokeSuper使用被代理后对象
  */
 public class MyMethodInterceptor implements MethodInterceptor{
 
