@@ -1,5 +1,7 @@
 package com.lanhuigu.spring;
 
+import com.lanhuigu.spring.hello.ApplicationConfig;
+import com.lanhuigu.spring.hello.HelloServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

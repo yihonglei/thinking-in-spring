@@ -1,5 +1,8 @@
 package com.lanhuigu.spring;
 
+import com.lanhuigu.spring.hello.ApplicationConfig;
+import com.lanhuigu.spring.hello.HappyNewYear;
+import com.lanhuigu.spring.hello.HelloServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.lanhuigu.spring;
+package com.lanhuigu.spring.hello;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

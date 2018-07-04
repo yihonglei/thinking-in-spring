@@ -1,4 +1,4 @@
-package com.lanhuigu.spring;
+package com.lanhuigu.spring.hello;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
