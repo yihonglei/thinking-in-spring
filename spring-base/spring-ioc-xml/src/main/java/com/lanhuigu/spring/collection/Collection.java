@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- *  spring 注入集合
+ *  Spring 注入集合
  */
 public class Collection {
     private Set<String> set;

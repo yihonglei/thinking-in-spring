@@ -17,7 +17,7 @@ public class TestCollectionSetter {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext-Setter.xml");
         // 从容器中获取bean
-         Collection collection=(Collection) context.getBean("collection");
+         Collection collection = (Collection) context.getBean("collection");
         // 打印个人属性
         System.out.println("Setter注入集合:" + collection.toString());
     }

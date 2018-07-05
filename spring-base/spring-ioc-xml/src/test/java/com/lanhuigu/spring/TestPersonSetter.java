@@ -16,8 +16,7 @@ public class TestPersonSetter {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext-Setter.xml");
         // 从容器中获取bean
-        Person person
-                = (Person) context.getBean("person");
+        Person person = (Person) context.getBean("person");
         // 打印个人属性
         System.out.println(" 姓名: " + person.getName() +
                            " 性别: " + person.getSex() +
