@@ -12,9 +12,36 @@
     <name>spring-datasource</name>
 
     <properties>
+        <mysql-connector-java.version>5.1.40</mysql-connector-java.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <commons-pool.version>1.4</commons-pool.version>
+        <c3p0.version>0.9.1.2</c3p0.version>
     </properties>
 
     <dependencies>
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+        <!-- dbcp -->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>${commons-dbcp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-pool</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>${commons-pool.version}</version>
+        </dependency>
+        <!-- c3p0 -->
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>${c3p0.version}</version>
+        </dependency>
     </dependencies>
 
 </project>
