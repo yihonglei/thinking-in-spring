@@ -12,7 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestCollectionSetter {
 
     @Test
-    public void testPerson() {
+    public void testCollection() {
         // 根据spring配置文件创建应用上下文
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext-Setter.xml");
