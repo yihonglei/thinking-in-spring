@@ -10,12 +10,13 @@
     <url>http://maven.apache.org</url>
     <!-- 子模块 -->
     <modules>
+        <module>spring</module>
         <module>spring-ioc-annotation</module>
         <module>spring-ioc-xml</module>
         <module>spring-aop-annotation</module>
         <module>spring-aop-xml</module>
-        <module>spring-common</module>
         <module>spring-transaction</module>
+        <module>spring-datasource</module>
         <module>spring-quartz</module>
     </modules>
     <!-- 版本配置 -->
