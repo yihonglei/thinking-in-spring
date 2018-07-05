@@ -10,6 +10,9 @@
     <packaging>jar</packaging>
     <name>spring-aop-xml</name>
 
+    <properties>
+    </properties>
+
     <dependencies>
     </dependencies>
 </project>
