@@ -40,21 +40,21 @@
        我们可以使用类似@Pointcut注解方式的元素<aop:pointcut>将其提出为公用部分,
        而使用切点表达式的地方通过pointcut-ref引入。优化之后效果如下。
      -->
-    <!--<aop:config>
-        <aop:aspect ref="person">
-            &lt;!&ndash; 定义切点 &ndash;&gt;
-            <aop:pointcut id="conference"
-                          expression="execution(* com.lanhuigu.spring.ConferenceServiceImpl.conference(..))"/>
-            &lt;!&ndash; 前置通知 &ndash;&gt;
-            <aop:before pointcut-ref="conference"
-                        method="takeSeats" />
-            &lt;!&ndash; 前置通知 &ndash;&gt;
-            <aop:before pointcut-ref="conference"
-                        method="silenceCellPhones" />
-            &lt;!&ndash; 后置通知 &ndash;&gt;
-            <aop:after pointcut-ref="conference"
-                       method="summary" />
-        </aop:aspect>
-    </aop:config>-->
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="person">-->
+            <!-- 定义切点 -->
+            <!--<aop:pointcut id="conference"
+                          expression="execution(* com.lanhuigu.spring.ConferenceServiceImpl.conference(..))"/>-->
+            <!-- 前置通知 -->
+            <!--<aop:before pointcut-ref="conference"
+                        method="takeSeats" />-->
+            <!-- 前置通知 -->
+            <!--<aop:before pointcut-ref="conference"
+                        method="silenceCellPhones" />-->
+            <!-- 后置通知 -->
+            <!--<aop:after pointcut-ref="conference"
+                       method="summary" />-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
 
 </beans>
