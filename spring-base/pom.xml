@@ -42,24 +42,53 @@
             <artifactId>junit</artifactId>
             <version>${junit-version}</version>
         </dependency>
-
+        <!-- spring 相关jar包 -->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
+            <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        <!-- spring 上下文 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        <!-- spring aop 依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- aop 依赖-->
         <dependency>
             <groupId>aopalliance</groupId>
             <artifactId>aopalliance</artifactId>
@@ -80,6 +109,13 @@
             <artifactId>cglib</artifactId>
             <version>${cglib.version}</version>
         </dependency>
+        <!-- Servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
         <!-- log -->
         <dependency>
             <groupId>log4j</groupId>
@@ -97,7 +133,6 @@
             <version>${slf4j-log4j12.version}</version>
         </dependency>
     </dependencies>
-
     <!-- 打包 -->
     <build>
         <plugins>
