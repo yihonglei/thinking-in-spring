@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- DBCP数据源配置 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/lanhuigu_web" />
+        <property name="username" value="root" />
+        <property name="password" value="lanhuigu" />
+    </bean>
+    <!-- HelloDAO bean定义 -->
+    <bean id="helloDAO" class="com.lanhuigu.transaction.dao.HelloDAO">
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+    </bean>
+    <!-- BaseService bean定义 -->
+    <bean id="baseService" class="com.lanhuigu.transaction.service.impl.BaseServiceImpl">
+        <property name="helloDAO">
+            <ref bean="helloDAO"></ref>
+        </property>
+    </bean>
+
+</beans>

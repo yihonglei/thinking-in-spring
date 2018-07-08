@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- c3p0数据源配置 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/lanhuigu_web"/>
+        <property name="user" value="root"/>
+        <property name="password" value="lanhuigu"/>
+    </bean>
+    <!-- HelloDAO bean定义 -->
+    <bean id="helloDAO" class="com.lanhuigu.transaction.dao.HelloDAO">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- BaseService bean定义 -->
+    <bean id="baseService" class="com.lanhuigu.transaction.service.impl.BaseServiceImpl">
+        <property name="helloDAO" ref="helloDAO"/>
+    </bean>
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--配置事务管理的模板-->
+    <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+        <property name="transactionManager" ref="transactionManager"></property>
+        <!--定义事务隔离级别,-1表示使用数据库默认级别-->
+        <property name="isolationLevelName" value="ISOLATION_DEFAULT"></property>
+        <property name="propagationBehaviorName" value="PROPAGATION_REQUIRED"></property>
+    </bean>
+
+</beans>
