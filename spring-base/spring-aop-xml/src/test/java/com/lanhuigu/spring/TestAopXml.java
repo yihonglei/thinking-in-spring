@@ -13,7 +13,7 @@ public class TestAopXml {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         // 从容器中获取Bean
-        ConferenceServiceImpl conferenceService = (ConferenceServiceImpl)context.getBean("conferenceService");
+        ConferenceService conferenceService = (ConferenceService) context.getBean("conferenceService");
         // 调用Bean方法
         conferenceService.conference();
 
