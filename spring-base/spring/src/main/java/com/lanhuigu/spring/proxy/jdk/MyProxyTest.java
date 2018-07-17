@@ -31,7 +31,7 @@ public class MyProxyTest {
         // ==========================第二种=============================
         /**
          * Proxy类中还有个将2~4步骤封装好的简便方法来创建动态代理对象，
-         *其方法签名为：newProxyInstance(ClassLoader loader,Class<?>[] instance, InvocationHandler h)
+         * 其方法签名为：newProxyInstance(ClassLoader loader,Class<?>[] instance, InvocationHandler h)
          */
         IHello  iHello2 = (IHello) Proxy.newProxyInstance(IHello.class.getClassLoader(), // 加载接口的类加载器
                 new Class[]{IHello.class}, // 一组接口
