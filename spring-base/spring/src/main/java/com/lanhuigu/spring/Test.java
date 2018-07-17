@@ -43,8 +43,6 @@ public class Test {
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
         reader.loadBeanDefinitions(res);*/
 
-        ProxyConfig;
-        ProxyFactoryBean;
         
     }
 }

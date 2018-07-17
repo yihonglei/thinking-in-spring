@@ -31,32 +31,6 @@ import org.springframework.core.io.Resource;
  */
 public class Test {
     public static void main(String[] args) {
-        BeanFactory;
-        HierarchicalBeanFactory;
-        ConfigurableBeanFactory;
-        AutowireCapableBeanFactory;
-        FactoryBean;
-        XmlBeanFactory;
-        DefaultListableBeanFactory;
-        ApplicationContext;
-        FileSystemXmlApplicationContext;
-        ClassPathXmlApplicationContext;
-        ConfigurableApplicationContext;
-        Resource;
-        ClassPathResource;
-        BeanDefinition;
-        BeanDefinitionReader;
-
-        BeforeAdvice;
-        MethodBeforeAdvice;
-        AfterAdvice;
-        ThrowsAdvice;
-        AfterReturningAdvice;
-
-        Pointcut;
-        JdkRegexpMethodPointcut;
-        DefaultPointcutAdvisor;
-        ProxyFactoryBean;
 
     }
 }
