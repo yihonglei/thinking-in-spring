@@ -25,6 +25,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.interceptor.TransactionProxyFactoryBean;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.XmlWebApplicationContext;
@@ -42,7 +43,7 @@ public class Test {
         DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
         reader.loadBeanDefinitions(res);*/
-
-        
+        /*PlatformTransactionManager;
+        TransactionProxyFactoryBean;*/
     }
 }
