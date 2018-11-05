@@ -13,23 +13,8 @@
         用来区分相同类型的其他bean。
         使用自动化命名很方便，但是没有多少实际用处，还是建议自己给bean显示设定ID。
     -->
-    <!--<bean id="helloService" class="com.lanhuigu.spring.common.HelloServiceImpl"/>-->
-
-    <!-- setter注入bean -->
-    <!--<bean id="selfIntroductionService" class="com.lanhuigu.spring.setter.SelfIntroductionServiceImpl">
-        <property name="helloService" ref="helloService"/>
-    </bean>-->
-
-    <!-- setter注入字面量 -->
-    <!--<bean id="person" class="com.lanhuigu.spring.entity.Person">
-        <property name="name" value="tom"/>
-        <property name="sex" value="男"/>
-        <property name="age" value="26"/>
-        <property name="hobby" value="爱好女人,哈哈！开个玩笑！"/>
-    </bean>-->
-
     <!-- setter注入集合 -->
-    <bean id="collection" class="com.lanhuigu.spring.collection.Collection">
+    <bean id="collection" class="com.lanhuigu.spring.entity.Collection">
         <!-- Set集合的属性注入 -->
         <property name="set">
             <set>

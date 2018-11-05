@@ -1,9 +1,9 @@
 package com.lanhuigu.spring.entity;
 
 /**
- * 个人信息
+ * 个人信息（构造器注入使用）
  */
-public class Person {
+public class PersonConstructor {
 
     /** 姓名 */
     private String name;
@@ -21,7 +21,7 @@ public class Person {
      * @param age
      * @param hobby
      */
-    public Person(String name, String sex, int age, String hobby) {
+    public PersonConstructor(String name, String sex, int age, String hobby) {
         this.name = name;
         this.sex = sex;
         this.age = age;

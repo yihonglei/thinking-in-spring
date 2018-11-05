@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+        Bean声明:
+        该bean类似于javaConfig中的@Bean注解;
+        用于创建bean的类通过class属性来指定，并且需要使用全限定的类名。
+        通过id指定bean的ID。如果不显示指定，默认使用class的全限定名进行命名。
+        eg:
+        com.lanhuigu.spring.common.HelloServiceImpl#0，其#0是一个计数器的形式，
+        用来区分相同类型的其他bean。
+        使用自动化命名很方便，但是没有多少实际用处，还是建议自己给bean显示设定ID。
+    -->
+    <bean id="helloService" class="com.lanhuigu.spring.common.HelloServiceImpl"/>
+
+    <!-- setter注入bean -->
+    <bean id="selfIntroductionService" class="com.lanhuigu.spring.setter.SelfIntroductionServiceImpl">
+        <property name="helloService" ref="helloService"/>
+    </bean>
+
+</beans>

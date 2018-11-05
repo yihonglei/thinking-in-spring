@@ -4,5 +4,5 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- import导入模块 -->
-    <import resource="applicationContext-Constructor.xml"/>
+    <!--<import resource="applicationContext-Constructor.xml"/>-->
 </beans>

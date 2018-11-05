@@ -4,9 +4,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * 1. 注解@ComponentScan开启组件扫描，spring默认是关闭的;
+ * 1. 注解@ComponentScan开启组件扫描，Spring默认是关闭的;
  *    注解@ComponentScan扫描与Application类同级包以及子包下包含@Component的类，
- *    并在spring上下文中创建为一个bean;
+ *    并在Spring上下文中创建为一个bean;
  *
  * 2. 如果不想使用@ComponentScan默认扫描包，可以通过basePackages显示指定,
  *    比如: @ComponentScan(basePackages = {"com.lanhuigu.spring"})

@@ -21,7 +21,7 @@
         <constructor-arg ref="helloService"/>
     </bean>
     <!-- 构造器注入字面量 -->
-    <bean id="person" class="com.lanhuigu.spring.entity.Person">
+    <bean id="personConstructor" class="com.lanhuigu.spring.entity.PersonConstructor">
         <!-- 第一种方式: 根据参数索引位置匹配 -->
         <constructor-arg index="0" value="tom"/>
         <constructor-arg index="1" value="男"/>
