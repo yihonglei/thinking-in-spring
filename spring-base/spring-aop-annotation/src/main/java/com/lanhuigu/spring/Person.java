@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  *  注解@Aspect标识该类为切面类
  */
-// @Component
+@Component
 @Aspect
 public class Person {
 

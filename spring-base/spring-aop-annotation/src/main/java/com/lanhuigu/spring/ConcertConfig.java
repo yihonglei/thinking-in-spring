@@ -1,12 +1,10 @@
 package com.lanhuigu.spring;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
- *
  * Jdk代理：基于接口的代理，一定是基于接口，会生成目标对象的接口的子对象。
  * Cglib代理：基于类的代理，不需要基于接口，会生成目标对象的子对象。
  *
@@ -14,22 +12,14 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *
  * 2. 如果属性proxyTargetClass默认为false, 表示使用jdk动态代理织入增强;
  *
- * 3. 如果属性proxyTargetClass设置为true，表示使用cglib动态代理技术织入增强;
+ * 3. 如果属性proxyTargetClass设置为true，表示使用Cglib动态代理技术织入增强;
  *
  * 4. 如果属性proxyTargetClass设置为false，但是目标类没有声明接口，
- *    spring aop还是会使用cglib动态代理，也就是说非接口的类要生成代理都用Cglib。
+ *    Spring aop还是会使用Cglib动态代理，也就是说非接口的类要生成代理都用Cglib。
  */
 @Configuration
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 @ComponentScan
 public class ConcertConfig {
-
-    /**
-     * 通过@Bean定义，注入到spring容器，也可以通过在Person类上添加@Component，实现同样的效果。
-     */
-    @Bean
-    public Person person() {
-        return new Person();
-    }
 
 }
