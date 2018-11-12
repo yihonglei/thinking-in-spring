@@ -2,7 +2,11 @@ package com.lanhuigu.spring.proxy.jdk;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-
+/**
+ * 实现InvocationHandler接口
+ * @author yihonglei
+ * @date 2018/11/8 19:55
+ */
 public class MyInvocationHandler implements InvocationHandler {
 
     /** 目标对象 */
