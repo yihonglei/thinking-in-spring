@@ -5,7 +5,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 
 /**
- * 模拟DAO层--简单测试
+ * 模拟DAO层
+ * @author yihonglei
+ * @date 2018/11/12 17:01
  */
 public class HelloDAO {
     private DataSource dataSource;

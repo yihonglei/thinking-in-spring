@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
     <!-- DriverManagerDataSource数据源配置 -->
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -19,6 +20,7 @@
             <value>lanhuigu</value>
         </property>
     </bean>
+
     <!-- HelloDAO bean定义 -->
     <bean id="helloDAO" class="com.lanhuigu.datasource.dao.HelloDAO">
         <property name="dataSource">

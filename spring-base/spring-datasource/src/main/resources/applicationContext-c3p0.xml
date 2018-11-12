@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
     <!-- c3p0数据源配置 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
@@ -11,10 +12,12 @@
         <property name="user" value="root"/>
         <property name="password" value="lanhuigu"/>
     </bean>
+
     <!-- HelloDAO bean定义 -->
     <bean id="helloDAO" class="com.lanhuigu.datasource.dao.HelloDAO">
         <property name="dataSource">
             <ref bean="dataSource"/>
         </property>
     </bean>
+
 </beans>
