@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--日志级别以及优先级排序: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+<!--Configuration后面的status，这个用于设置log4j2自身内部的信息输出，可以不设置，当设置成trace时，你会看到log4j2内部各种详细输出-->
+<!--monitorInterval：Log4j能够自动检测修改配置 文件和重新配置本身，设置间隔秒数-->
+<Configuration status="WARN" monitorInterval="30" strict="true">
+
+    <Properties>
+        <Property name="logPath">/data/log/spring-demo</Property>
+        <!-- 输出日志的格式 -->
+        <Property name="logPatternLayout">%-5level %date{yyyy-MM-dd HH:mm:ss,SSS} [%thread] %X{req.id} %class{1.}#%M:%line %msg%n</Property>
+    </Properties>
+
+    <appenders>
+        <!-- 输出到控制台 -->
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%-5p %d [%t] %X{req.id} %l: %m%n"/>
+        </Console>
+
+        <!-- INFO日志 -->
+        <RollingFile name="INFO_LOG" fileName="${logPath}/spring-demo.log"
+                     filePattern="${logPath}/spring-demo.log.%d{yyyy-MM-dd-HH}">
+            <PatternLayout pattern="${logPatternLayout}" charset="UTF-8"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <!-- WARN日志 -->
+        <RollingFile name="WARN_LOG" fileName="${logPath}/spring-demo-warn.log"
+                     filePattern="${logPath}/spring-demo-warn.log.%d{yyyy-MM-dd}">
+            <PatternLayout pattern="${logPatternLayout}" charset="UTF-8"/>
+            <!--
+                注意：
+                1. 存在多个ThresholdFilter，必须定义Filters
+                2. 首先要DENY不符合的日志级别，再ACCEPT需要的日志级别，这个顺序不能颠倒，否则DENY不生效
+            -->
+            <Filters>
+                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <!-- ERROR日志 -->
+        <RollingFile name="ERROR_LOG" fileName="${logPath}/spring-demo-error.log"
+                     filePattern="${logPath}/spring-demo-error.log.%d{yyyy-MM-dd}">
+            <PatternLayout pattern="${logPatternLayout}" charset="UTF-8"/>
+            <Filters>
+                <ThresholdFilter level="fatal" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <!-- FATAL日志 -->
+        <RollingFile name="FATAL_LOG" fileName="${logPath}/spring-demo-fatal.log"
+                     filePattern="${logPath}/spring-demo-fatal.log.%d{yyyy-MM-dd}">
+            <PatternLayout pattern="${logPatternLayout}" charset="UTF-8"/>
+            <Filters>
+                <ThresholdFilter level="fatal" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <!-- SQL日志 -->
+        <RollingFile name="SQL_LOG" fileName="/data/log/sql/spring-demo-sql.log"
+                     filePattern="/data/log/sql/spring-demo-sql.log.%d{yyyy-MM-dd}.%i">
+            <PatternLayout pattern="${logPatternLayout}" charset="UTF-8"/>
+            <!--<MarkerFilter marker="SQL" onMatch="ACCEPT" onMismatch="DENY"/>-->
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="100"/>
+        </RollingFile>
+
+    </appenders>
+
+    <loggers>
+        <!-- 过滤掉spring和mybatis的一些无用的DEBUG信息 -->
+        <logger name="org.springframework" level="INFO"></logger>
+        <logger name="org.mybatis" level="INFO"></logger>
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="INFO_LOG"/>
+            <AppenderRef ref="WARN_LOG"/>
+            <AppenderRef ref="ERROR_LOG"/>
+            <AppenderRef ref="FATAL_LOG"/>
+        </Root>
+    </loggers>
+</Configuration>
