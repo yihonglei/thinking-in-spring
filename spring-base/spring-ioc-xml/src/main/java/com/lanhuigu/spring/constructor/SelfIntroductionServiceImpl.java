@@ -2,7 +2,7 @@ package com.lanhuigu.spring.constructor;
 
 import com.lanhuigu.spring.common.HelloService;
 
-public class SelfIntroductionServiceImpl implements SelfIntroductionService{
+public class SelfIntroductionServiceImpl implements SelfIntroductionService {
     private HelloService helloService;
 
     // 构造器注入Bean

@@ -5,17 +5,26 @@ package com.lanhuigu.spring.entity;
  */
 public class PersonConstructor {
 
-    /** 姓名 */
+    /**
+     * 姓名
+     */
     private String name;
-    /** 性别 */
+    /**
+     * 性别
+     */
     private String sex;
-    /** 年龄 */
+    /**
+     * 年龄
+     */
     private int age;
-    /** 兴趣爱好 */
+    /**
+     * 兴趣爱好
+     */
     private String hobby;
 
     /**
      * 构造器注入时打开构造器--setter注入时注释掉构造器
+     *
      * @param name
      * @param sex
      * @param age

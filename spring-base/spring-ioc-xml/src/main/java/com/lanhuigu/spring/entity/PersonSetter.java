@@ -5,13 +5,21 @@ package com.lanhuigu.spring.entity;
  */
 public class PersonSetter {
 
-    /** 姓名 */
+    /**
+     * 姓名
+     */
     private String name;
-    /** 性别 */
+    /**
+     * 性别
+     */
     private String sex;
-    /** 年龄 */
+    /**
+     * 年龄
+     */
     private int age;
-    /** 兴趣爱好 */
+    /**
+     * 兴趣爱好
+     */
     private String hobby;
 
     public String getName() {

@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * 测试构造器注入（bean、字面量）
  */
-public class TestConstructor {
+public class ConstructorTest {
 
     /**
      * 造器注入Bean

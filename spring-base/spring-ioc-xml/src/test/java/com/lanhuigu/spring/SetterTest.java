@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * 测试setter注入(bean、字面量、集合)
  */
-public class TestSetter {
+public class SetterTest {
 
     /**
      * 注入bean
