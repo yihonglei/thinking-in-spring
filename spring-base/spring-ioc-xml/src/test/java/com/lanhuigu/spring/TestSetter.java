@@ -18,7 +18,7 @@ public class TestSetter {
      * @date 2018/11/5 19:38
      */
     @Test
-    public void testHelloBean() {
+    public void testBean() {
         // 根据spring配置文件创建应用上下文
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext-Setter-Bean.xml");
@@ -35,7 +35,7 @@ public class TestSetter {
      * @date 2018/11/5 19:38
      */
     @Test
-    public void testHelloConstant() {
+    public void testConstant() {
         // 根据spring配置文件创建应用上下文
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext-Setter-Constant.xml");
@@ -54,7 +54,7 @@ public class TestSetter {
      * @date 2018/11/5 19:38
      */
     @Test
-    public void testHelloSetter() {
+    public void testList() {
         // 根据spring配置文件创建应用上下文
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext-Setter-List.xml");

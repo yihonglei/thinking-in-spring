@@ -17,7 +17,7 @@ public class TestConstructor {
      * @date 2018/11/5 19:42
      */
     @Test
-    public void testHello() {
+    public void testBean() {
         // 根据spring配置文件创建应用上下文
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext-Constructor.xml");
@@ -29,12 +29,12 @@ public class TestConstructor {
     }
 
     /**
-     * 造器注入集合
+     * 造器注入常量
      * @author yihonglei
      * @date 2018/11/5 19:42
      */
     @Test
-    public void testHello2() {
+    public void testList() {
         // 根据spring配置文件创建应用上下文
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext-Constructor.xml");
