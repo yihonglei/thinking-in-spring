@@ -1,9 +1,10 @@
-package com.lanhuigu.spring.bean;
+package com.lanhuigu.spring;
 
+import com.lanhuigu.spring.factorybean.AppConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class StartTest {
+public class FactoryBeanTest {
     public static void main(String[] args){
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
         // 得到的是apple

@@ -1,4 +1,4 @@
-package com.lanhuigu.spring.bean;
+package com.lanhuigu.spring.factorybean;
 
 public class AppleBean {
 

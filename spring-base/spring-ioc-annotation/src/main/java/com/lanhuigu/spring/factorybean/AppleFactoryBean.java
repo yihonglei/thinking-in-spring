@@ -1,4 +1,4 @@
-package com.lanhuigu.spring.bean;
+package com.lanhuigu.spring.factorybean;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;
