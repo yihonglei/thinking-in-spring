@@ -20,7 +20,7 @@ public class TestConstructor {
     public void testBean() {
         // 根据spring配置文件创建应用上下文
         ApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext-Constructor.xml");
+                new ClassPathXmlApplicationContext("applicationContext-Constructor-Bean.xml");
         // 从容器中获取bean
         SelfIntroductionService selfIntroductionService
                 = (SelfIntroductionService)context.getBean("selfIntroductionService");
@@ -37,7 +37,7 @@ public class TestConstructor {
     public void testList() {
         // 根据spring配置文件创建应用上下文
         ApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext-Constructor.xml");
+                new ClassPathXmlApplicationContext("applicationContext-Constructor-Constant.xml");
         // 从容器中获取bean
         PersonConstructor person = (PersonConstructor) context.getBean("personConstructor");
         // 打印个人属性

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+       Bean声明:
+         该bean类似于javaConfig中的@Bean注解;
+         用于创建bean的类通过class属性来指定，并且需要使用全限定的类名。
+         通过id指定bean的ID。如果不显示指定，默认使用class的全限定名进行命名。
+         eg:
+         com.lanhuigu.spring.common.HelloServiceImpl#0，其#0是一个计数器的形式，
+         用来区分相同类型的其他bean。
+         使用自动化命名很方便，但是没有多少实际用处，还是建议自己给bean显示设定ID。
+     -->
+    <bean id="helloService" class="com.lanhuigu.spring.common.HelloServiceImpl"/>
+
+    <!-- 构造器注入bean -->
+    <bean id="selfIntroductionService" class="com.lanhuigu.spring.constructor.SelfIntroductionServiceImpl">
+        <!-- 构造器注入bean -->
+        <constructor-arg ref="helloService"/>
+    </bean>
+    <!-- 构造器注入字面量 -->
+    <bean id="personConstructor" class="com.lanhuigu.spring.entity.PersonConstructor">
+        <!-- 第一种方式: 根据参数索引位置匹配 -->
+        <constructor-arg index="0" value="tom"/>
+        <constructor-arg index="1" value="男"/>
+        <constructor-arg index="2" value="26"/>
+        <constructor-arg index="3" value="爱好女人,哈哈！开个玩笑！"/>
+        <!-- 第二种方式: 根据参数类型匹配 -->
+        <!--<constructor-arg value="tom" type="java.lang.String"/>
+        <constructor-arg value="男" type="java.lang.String"/>
+        <constructor-arg value="26" type="int"/>
+        <constructor-arg value="爱好女人,哈哈！开个玩笑！" type="java.lang.String"/>-->
+    </bean>
+
+</beans>
