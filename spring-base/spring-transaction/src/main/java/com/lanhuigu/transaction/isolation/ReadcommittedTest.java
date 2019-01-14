@@ -28,7 +28,7 @@ public class ReadcommittedTest {
 
         // 创建数据库连接
         Connection connection =
-                DriverManager.getConnection("jdbc:mysql://localhost:3306/lanhuigu","root", "lanhuigu");
+                DriverManager.getConnection("jdbc:mysql://localhost:3306/lanhuigu","root", "123456");
 
         return connection;
     }
