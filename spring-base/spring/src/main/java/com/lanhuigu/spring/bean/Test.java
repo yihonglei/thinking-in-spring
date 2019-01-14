@@ -5,4 +5,5 @@ package com.lanhuigu.spring.bean;
  * @date 2019/1/13 11:45
  */
 public class Test {
+
 }
