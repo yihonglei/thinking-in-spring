@@ -1,15 +1,13 @@
 package com.lanhuigu.transaction.dao;
 
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.support.TransactionCallback;
 
 import javax.sql.DataSource;
 
 /**
  * 模拟DAO层--简单测试
  */
-public class HelloDAO {
+public class AccountDAO {
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
 
@@ -22,7 +20,7 @@ public class HelloDAO {
     }
 
     public void insert() {
-        String sql = "insert into t_user_main (userId, userName, age) values (1, 'DataSource', 27)";
+        String sql = "insert into account (id, userId, accountName, money) values (1, 1, 'user01_account', 0)";
         jdbcTemplate.update(sql);
     }
 }

@@ -11,14 +11,27 @@
         <property name="user" value="root"/>
         <property name="password" value="lanhuigu"/>
     </bean>
-    <!-- HelloDAO bean定义 -->
-    <bean id="helloDAO" class="com.lanhuigu.transaction.dao.HelloDAO">
+
+    <!-- UserDAO bean定义 -->
+    <bean id="userDAO" class="com.lanhuigu.transaction.dao.UserDAO">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-    <!-- BaseService bean定义 -->
-    <bean id="baseService" class="com.lanhuigu.transaction.service.impl.BaseServiceImpl">
-        <property name="helloDAO" ref="helloDAO"/>
+
+    <!-- UserService bean定义 -->
+    <bean id="userService" class="com.lanhuigu.transaction.service.impl.UserServiceImpl">
+        <property name="userDAO" ref="userDAO"/>
     </bean>
+
+    <!-- AccountDAO bean定义 -->
+    <bean id="accountDAO" class="com.lanhuigu.transaction.dao.AccountDAO">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- AccountService bean定义 -->
+    <bean id="accountService" class="com.lanhuigu.transaction.service.impl.AccountServiceImpl">
+        <property name="accountDAO" ref="accountDAO"/>
+    </bean>
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
