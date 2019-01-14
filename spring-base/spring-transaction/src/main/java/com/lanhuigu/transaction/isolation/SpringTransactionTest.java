@@ -31,6 +31,13 @@ public class SpringTransactionTest {
         return conn;
     }
 
+    /**
+     * 1）在一个事务内，一个失败，全部失败回滚。
+     * 2）如果设置了保存点，可以选择回滚到保存点。
+     *
+     * @author yihonglei
+     * @date 2019/1/14 20:42
+     */
     public static void main(String[] args) {
         final DataSource ds = new DriverManagerDataSource(url, user, password);
 
@@ -47,39 +54,39 @@ public class SpringTransactionTest {
                     {
                         // 插入
                         PreparedStatement prepare = conn.
-                                prepareStatement("insert INTO account (accountName,userId,money) VALUES (?,?,?)");
+                                prepareStatement("insert INTO account (accountName,userName,money) VALUES (?,?,?)");
                         prepare.setString(1, "111");
-                        prepare.setInt(2, 1);
+                        prepare.setString(2, "aaa");
                         prepare.setInt(3, 10000);
                         prepare.executeUpdate();
                     }
-                    // 设置保存点
-                    savePoint = status.createSavepoint();
+                    // 设置保存点，如果设置了保存点，我们可以根据保存点进行回滚
+                     savePoint = status.createSavepoint();
                     {
                         // 插入
                         PreparedStatement prepare = conn.
-                                prepareStatement("insert INTO account (accountName,userId,money) VALUES (?,?,?)");
+                                prepareStatement("insert INTO account (accountName,userName,money) VALUES (?,?,?)");
                         prepare.setString(1, "222");
-                        prepare.setInt(2, 2);
+                        prepare.setString(2, "bbb");
                         prepare.setInt(3, 10000);
                         prepare.executeUpdate();
                     }
                     {
                         // 更新
                         PreparedStatement prepare = conn.
-                                prepareStatement("UPDATE account SET money= money+1 where userId=?");
-                        prepare.setInt(1, 99);
+                                prepareStatement("UPDATE account SET money= money+1 where userName=?");
+                        prepare.setString(1, "ccc");
 
+                        // 模拟报错
                         int i = 1 / 0;
 
                     }
-                } catch (SQLException e) {
-                    e.printStackTrace();
                 } catch (Exception e) {
                     System.out.println("更新失败");
-                    if (savePoint != null) {
+                    if (savePoint != null) { // 回滚到保存点
                         status.rollbackToSavepoint(savePoint);
                     } else {
+                        // 事务回滚
                         status.setRollbackOnly();
                     }
                 }
