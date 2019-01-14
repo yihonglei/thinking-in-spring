@@ -1,47 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!-- c3p0数据源配置 -->
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
-          destroy-method="close">
-        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/lanhuigu_web"/>
-        <property name="user" value="root"/>
-        <property name="password" value="lanhuigu"/>
-    </bean>
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <!-- UserDAO bean定义 -->
-    <bean id="userDAO" class="com.lanhuigu.transaction.dao.UserDAO">
+    <context:annotation-config/>
+    <context:component-scan base-package="com.lanhuigu.transaction.service.**"/>
+
+    <aop:aspectj-autoproxy expose-proxy="true"/>
+
+    <bean class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <!-- UserService bean定义 -->
-    <bean id="userService" class="com.lanhuigu.transaction.service.impl.UserServiceImpl">
-        <property name="userDAO" ref="userDAO"/>
-    </bean>
-
-    <!-- AccountDAO bean定义 -->
-    <bean id="accountDAO" class="com.lanhuigu.transaction.dao.AccountDAO">
+    <!-- similarly, don't forget the PlatformTransactionManager -->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <!-- AccountService bean定义 -->
-    <bean id="accountService" class="com.lanhuigu.transaction.service.impl.AccountServiceImpl">
-        <property name="accountDAO" ref="accountDAO"/>
+    <!-- don't forget the DataSource -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <constructor-arg name="url" value="jdbc:mysql://localhost:3306/lanhuigu"/>
+        <constructor-arg name="username" value="root"/>
+        <constructor-arg name="password" value="123456"/>
     </bean>
 
-    <!-- 配置事务管理器 -->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-    <!--配置事务管理的模板-->
-    <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
-        <property name="transactionManager" ref="transactionManager"></property>
-        <!--定义事务隔离级别,-1表示使用数据库默认级别-->
-        <property name="isolationLevelName" value="ISOLATION_DEFAULT"></property>
-        <property name="propagationBehaviorName" value="PROPAGATION_REQUIRED"></property>
-    </bean>
+    <tx:annotation-driven transaction-manager="txManager"></tx:annotation-driven>
 
 </beans>

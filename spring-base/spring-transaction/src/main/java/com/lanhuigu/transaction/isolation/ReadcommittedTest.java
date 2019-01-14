@@ -33,13 +33,13 @@ public class ReadcommittedTest {
         return connection;
     }
 
-    public static void insert(String accountName, int userId, int money) {
+    public static void insert(String accountName, String userName, int money) {
         try {
             Connection conn = openConnection();
             PreparedStatement prepare = conn.
-                    prepareStatement("insert INTO account (accountName, userId, money) VALUES (?,?,?)");
+                    prepareStatement("insert INTO account (accountName, userName, money) VALUES (?,?,?)");
             prepare.setString(1, accountName);
-            prepare.setInt(2, userId);
+            prepare.setString(2, userName);
             prepare.setInt(3, money);
             prepare.executeUpdate();
             System.out.println("执行插入成功");
@@ -51,11 +51,11 @@ public class ReadcommittedTest {
         }
     }
 
-    public static void select(int userId, Connection conn) {
+    public static void select(String userName, Connection conn) {
         try {
             PreparedStatement prepare = conn.
-                    prepareStatement("SELECT * from account where userId =?");
-            prepare.setInt(1, userId);
+                    prepareStatement("SELECT * from account where userName =?");
+            prepare.setString(1, userName);
             ResultSet resultSet = prepare.executeQuery();
             System.out.println("执行查询");
             while (resultSet.next()) {
@@ -78,7 +78,7 @@ public class ReadcommittedTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            insert("1111", 1, 10000);
+            insert("1111", "yihonglei", 10000);
         });
         insertT.start();
 
@@ -89,7 +89,7 @@ public class ReadcommittedTest {
                 // 将参数升级成 Connection.TRANSACTION_REPEATABLE_READ 即可解决不可重复读问题
 //                    conn.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
                 // 第一次读取不到
-                select(1, conn);
+                select("yihonglei", conn);
                 // 释放锁
                 synchronized (lock) {
                     lock.notify();
@@ -97,7 +97,7 @@ public class ReadcommittedTest {
                 // 第二次读取到(数据不一至)
                 Thread.sleep(500);
 
-                select(1, conn);
+                select("yihonglei", conn);
                 conn.close();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

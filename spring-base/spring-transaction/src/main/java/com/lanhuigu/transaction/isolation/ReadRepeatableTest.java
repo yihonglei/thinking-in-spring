@@ -32,12 +32,12 @@ public class ReadRepeatableTest {
         return connection;
     }
 
-    public static void update(int userId) {
+    public static void update(String userName) {
         try {
             Connection conn = openConnection();
             PreparedStatement prepare = conn.
-                    prepareStatement("UPDATE account SET money= money+1 where userId=?");
-            prepare.setInt(1, userId);
+                    prepareStatement("UPDATE account SET money= money+1 where userName=?");
+            prepare.setString(1, userName);
             prepare.executeUpdate();
             conn.close();
             System.out.println("执行修改成功");
@@ -48,11 +48,11 @@ public class ReadRepeatableTest {
         }
     }
 
-    public static void select(int userId, Connection conn) {
+    public static void select(String userName, Connection conn) {
         try {
             PreparedStatement prepare = conn.
-                    prepareStatement("SELECT * from account where userId=?");
-            prepare.setInt(1, userId);
+                    prepareStatement("SELECT * from account where userName=?");
+            prepare.setString(1, userName);
             ResultSet resultSet = prepare.executeQuery();
             System.out.println("执行查询");
             while (resultSet.next()) {
@@ -82,7 +82,7 @@ public class ReadRepeatableTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            update(1);
+            update("yihonglei");
         });
 
         Thread selectT = new Thread(() -> {
@@ -91,14 +91,14 @@ public class ReadRepeatableTest {
                 conn.setAutoCommit(false);
                 conn.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
                 // 第一次读取
-                select(1, conn);
+                select("yihonglei", conn);
                 // 释放锁
                 synchronized (lock) {
                     lock.notify();
                 }
                 // 第二次读取 ,采用了  REPEATABLE 级别，所以两次读取数据一至
                 Thread.sleep(500);
-                select(1, conn);
+                select("yihonglei", conn);
                 conn.close();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

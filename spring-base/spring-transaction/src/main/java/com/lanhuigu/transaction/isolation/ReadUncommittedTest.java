@@ -37,7 +37,7 @@ public class ReadUncommittedTest {
      * @author yihonglei
      * @date 2019/1/14 17:52
      */
-    public static void insert(String accountName, int userId, int money) {
+    public static void insert(String accountName, String userName, int money) {
         try {
             // 创建连接，并设置为非自动提交
             Connection connection = openConnection();
@@ -45,11 +45,11 @@ public class ReadUncommittedTest {
 
             // 预编译SQL
             PreparedStatement ps =
-                    connection.prepareStatement("insert INTO account (accountName, userId, money) VALUES (?,?,?)");
+                    connection.prepareStatement("insert INTO account (accountName, userName, money) VALUES (?,?,?)");
 
             // 设置SQL参数
             ps.setString(1, accountName);
-            ps.setInt(2, userId);
+            ps.setString(2, userName);
             ps.setInt(3, money);
 
             // 执行SQL
@@ -71,11 +71,11 @@ public class ReadUncommittedTest {
      * @author yihonglei
      * @date 2019/1/14 17:57
      */
-    public static void select(int userId, Connection conn) {
+    public static void select(String userName, Connection conn) {
         try {
             PreparedStatement prepare = conn.
-                    prepareStatement("SELECT * from account where userId=?");
-            prepare.setInt(1, userId);
+                    prepareStatement("SELECT * from account where userName=?");
+            prepare.setString(1, userName);
             ResultSet resultSet = prepare.executeQuery();
             System.out.println("执行查询");
             while (resultSet.next()) {
@@ -92,7 +92,7 @@ public class ReadUncommittedTest {
     public static void main(String[] args) {
         // 启动插入线程
         Thread insertT = new Thread(() -> {
-            insert("1111", 1, 10000);
+            insert("1111", "yihonglei", 10000);
         });
         insertT.start();
 
@@ -103,7 +103,7 @@ public class ReadUncommittedTest {
                 Connection connection = openConnection();
                 // 将参数升级成 Connection.TRANSACTION_READ_COMMITTED 即可解决脏读的问题
                 connection.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
-                select(1, connection);
+                select("yihonglei", connection);
             } catch (Exception e) {
                 e.printStackTrace();
             }
