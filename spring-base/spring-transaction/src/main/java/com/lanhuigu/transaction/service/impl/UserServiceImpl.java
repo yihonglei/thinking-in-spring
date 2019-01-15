@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 使用事务非常容易犯以下错误：
-     * 1）在同一个类中，a调用b，在b上面加了事务，以为b上的事务生效了，其实是不生效的，
+     * 1）在同一个类中，a调用b，在b上面新开了一个事务，以为b上的事务生效了，其实是不生效的，
      * 因为事务基于aop实现，是通过代理对象完成事务包裹的，必须通过代理对象调用，事务才会生效，
      * 同一个类中，a调b，相当于this.a，只是一个普通对象调用，没有事务，很多人容易犯这个错误，
      * 老坑了。
@@ -65,7 +65,7 @@ public class UserServiceImpl implements UserService {
         // 插入user 记录
         jdbcTemplate.update("INSERT INTO `user` (userName) VALUES(?)", userName);
 
-        // 事务未生效：同类中a直接调用b方法，相当于b的代码直接写在a里面，因为a上面没有事务，所以压根就没有事务。
+        // 事务未生效：同类中a直接调用b方法，相当于b的代码直接写在a里面，事务要基于代理对象调用才有效，所以b上的事务是无效的。
 //         b(userName, 10000);
 
         // 事务生效：获取代理对象，基于代理对象调用，事务才能生效。
