@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Aspect
-public class Person {
+public class PersonAspect {
 
 //    /**
 //     * 开会之前--找个位置坐下

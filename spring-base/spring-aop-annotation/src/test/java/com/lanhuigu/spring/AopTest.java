@@ -8,13 +8,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = AppConfig.class)
-public class AopAnnotationTest {
+public class AopTest {
 
     @Autowired
     private ConferenceServiceImpl conferenceService;
 
     @Test
-    public void testAop() {
+    public void testAopAnnotation() {
         conferenceService.conference();
     }
 
