@@ -15,26 +15,31 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <context:annotation-config/>
+
+    <!-- 扫描service下的文件，将@Service注解类加载到IOC容器中 -->
     <context:component-scan base-package="com.lanhuigu.transaction.service.**"/>
 
+    <!-- 开启代理 -->
     <aop:aspectj-autoproxy expose-proxy="true"/>
 
-    <bean class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-
-    <!-- similarly, don't forget the PlatformTransactionManager -->
-    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-
-    <!-- don't forget the DataSource -->
+    <!-- 数据源配置 -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <constructor-arg name="url" value="jdbc:mysql://localhost:3306/lanhuigu"/>
         <constructor-arg name="username" value="root"/>
         <constructor-arg name="password" value="123456"/>
     </bean>
 
-    <tx:annotation-driven transaction-manager="txManager"></tx:annotation-driven>
+    <!-- 配置JdbcTemplate -->
+    <bean class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- DataSourceTransactionManager事务管理器，实现了PlatformTransactionManager接口 -->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 配置事务驱动 -->
+    <tx:annotation-driven transaction-manager="txManager"/>
 
 </beans>

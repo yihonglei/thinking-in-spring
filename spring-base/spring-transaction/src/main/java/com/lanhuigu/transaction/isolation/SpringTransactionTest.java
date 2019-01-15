@@ -61,7 +61,7 @@ public class SpringTransactionTest {
                         prepare.executeUpdate();
                     }
                     // 设置保存点，如果设置了保存点，我们可以根据保存点进行回滚
-                     savePoint = status.createSavepoint();
+//                     savePoint = status.createSavepoint();
                     {
                         // 插入
                         PreparedStatement prepare = conn.
