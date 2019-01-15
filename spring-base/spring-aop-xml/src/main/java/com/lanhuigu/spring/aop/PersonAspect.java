@@ -3,7 +3,7 @@ package com.lanhuigu.spring.aop;
 /**
  *  切面类
  */
-public class Person {
+public class PersonAspect {
 
     /**
      * 开会之前--找个位置坐下

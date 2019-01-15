@@ -13,10 +13,10 @@
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <!-- bean定义 -->
-    <bean id="conferenceService" class="com.lanhuigu.spring.ConferenceServiceImpl"/>
+    <bean id="conferenceService" class="com.lanhuigu.spring.aop.ConferenceServiceImpl"/>
 
     <!-- 切面类 -->
-    <bean id="person" class="com.lanhuigu.spring.Person"/>
+    <bean id="person" class="com.lanhuigu.spring.aop.PersonAspect"/>
 
     <!--
        在<aop:config>中我们可以声明一个活多个通知器、切面或者切点。
@@ -24,13 +24,13 @@
     <aop:config>
         <aop:aspect ref="person">
             <!-- 前置通知 -->
-            <aop:before pointcut="execution(* com.lanhuigu.spring.ConferenceServiceImpl.conference(..))"
+            <aop:before pointcut="execution(* com.lanhuigu.spring.aop.ConferenceServiceImpl.conference(..))"
                         method="takeSeats" />
             <!-- 前置通知 -->
-            <aop:before pointcut="execution(* com.lanhuigu.spring.ConferenceServiceImpl.conference(..))"
+            <aop:before pointcut="execution(* com.lanhuigu.spring.aop.ConferenceServiceImpl.conference(..))"
                         method="silenceCellPhones" />
             <!-- 后置通知 -->
-            <aop:after pointcut="execution(* com.lanhuigu.spring.ConferenceServiceImpl.conference(..))"
+            <aop:after pointcut="execution(* com.lanhuigu.spring.aop.ConferenceServiceImpl.conference(..))"
                         method="summary" />
         </aop:aspect>
     </aop:config>
@@ -44,7 +44,7 @@
         <!--<aop:aspect ref="person">-->
             <!-- 定义切点 -->
             <!--<aop:pointcut id="conference"
-                          expression="execution(* com.lanhuigu.spring.ConferenceServiceImpl.conference(..))"/>-->
+                          expression="execution(* com.lanhuigu.spring.aop.ConferenceServiceImpl.conference(..))"/>-->
             <!-- 前置通知 -->
             <!--<aop:before pointcut-ref="conference"
                         method="takeSeats" />-->

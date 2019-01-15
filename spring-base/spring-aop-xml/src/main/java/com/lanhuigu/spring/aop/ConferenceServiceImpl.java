@@ -1,4 +1,4 @@
-package com.lanhuigu.spring;
+package com.lanhuigu.spring.aop;
 
 public class ConferenceServiceImpl implements ConferenceService {
 
