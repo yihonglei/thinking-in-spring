@@ -12,6 +12,12 @@ import org.springframework.transaction.annotation.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 用户
+ *
+ * @author yihonglei
+ * @date 2019/1/15 14:37
+ */
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -24,7 +30,7 @@ public class UserServiceImpl implements UserService {
      * 事务情况：
      * 1）createUser方法开启事务，插入用户。
      * 2）addAccount方法新开一个事务(Propagation.REQUIRES_NEW)，然后抛异常。
-     *
+     * <p>
      * 执行效果：
      * 插入用户会失败，添加账户成功，因为addAccount是一个新事务，不受createUser事务控制。
      *
@@ -49,31 +55,32 @@ public class UserServiceImpl implements UserService {
      * 同一个类中，a调b，相当于this.a，只是一个普通对象调用，没有事务，很多人容易犯这个错误，
      * 老坑了。
      * 2）事务方法必须为public的，否则事务也不会生效。
-     * 
+     *
      * @author yihonglei
      * @date 2019/1/15 11:53
      */
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public void a(String userName) {
+        // 插入user 记录
+        jdbcTemplate.update("INSERT INTO `user` (userName) VALUES(?)", userName);
+
         // 事务未生效：同类中a直接调用b方法，相当于b的代码直接写在a里面，因为a上面没有事务，所以压根就没有事务。
-        // b(userName, 10000);
+//         b(userName, 10000);
 
         // 事务生效：获取代理对象，基于代理对象调用，事务才能生效。
         UserService proxy = (UserService) AopContext.currentProxy();
         proxy.b(userName, 10000);
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.REQUIRED)
-    public void b(String userName, int initMoney) {
-        // 插入user 记录
-        jdbcTemplate.update("INSERT INTO `user` (userName) VALUES(?)", userName);
-
-        // 插入account记录
-        String accountid = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        jdbcTemplate.update("insert INTO account (accountName,userName,money) VALUES (?,?,?)", accountid, userName, initMoney);
 
         // 人为报错
         int i = 1 / 0;
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void b(String userName, int initMoney) {
+        // 插入account记录
+        String accountName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        jdbcTemplate.update("insert INTO account (accountName,userName,money) VALUES (?,?,?)", accountName, userName, initMoney);
     }
 }

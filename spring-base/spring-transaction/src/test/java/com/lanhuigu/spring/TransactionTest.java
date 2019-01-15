@@ -4,11 +4,6 @@ import com.lanhuigu.transaction.service.AccountService;
 import com.lanhuigu.transaction.service.UserService;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * 事务测试
