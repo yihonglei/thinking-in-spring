@@ -53,7 +53,7 @@ public class TransactionTest {
      * @date 2019/1/15 11:38
      */
     @Test
-    public void initUser() {
+    public void invalidate() {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         UserService service = context.getBean(UserService.class);
