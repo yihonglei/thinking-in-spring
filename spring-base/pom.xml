@@ -26,7 +26,6 @@
         <junit-version>4.12</junit-version>
         <java.version>1.8</java.version>
         <aopalliance.version>1.0</aopalliance.version>
-        <aspectjrt.version>1.7.3</aspectjrt.version>
         <aspectjweaver.version>1.7.4</aspectjweaver.version>
         <cglib.version>3.2.5</cglib.version>
         <quartz.version>2.3.0</quartz.version>
@@ -102,11 +101,6 @@
             <groupId>aopalliance</groupId>
             <artifactId>aopalliance</artifactId>
             <version>${aopalliance.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>${aspectjrt.version}</version>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>

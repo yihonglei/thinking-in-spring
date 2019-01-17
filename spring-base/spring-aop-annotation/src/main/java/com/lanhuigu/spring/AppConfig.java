@@ -22,4 +22,5 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @ComponentScan("com.lanhuigu")
 public class AppConfig {
 
+
 }
