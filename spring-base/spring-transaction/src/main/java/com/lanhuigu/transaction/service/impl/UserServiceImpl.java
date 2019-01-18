@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
         // 调用 accountService 添加帐户
         accountService.addAccount(userName, 10000);
         // 人为报错
-        int i = 1 / 0;
+        // int i = 1 / 0;
     }
 
     /**
