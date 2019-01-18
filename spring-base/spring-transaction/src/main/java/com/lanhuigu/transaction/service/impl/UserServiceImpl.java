@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
         jdbcTemplate.update("INSERT INTO `user` (userName) VALUES(?)", userName);
         // 调用 accountService 添加帐户
         accountService.addAccount(userName, 10000);
-        // 人为报错
+        // 人为报错，测试新事务效果
         // int i = 1 / 0;
     }
 
