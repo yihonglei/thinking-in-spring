@@ -14,20 +14,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TransactionTest {
 
     /**
-     * 测试新开一个事务的效果。
-     *
-     * @author yihonglei
-     * @date 2019/1/15 11:34
-     */
-    @Test
-    public void createUser() {
-        ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
-        UserService service = context.getBean(UserService.class);
-        service.createUser("yihonglei");
-    }
-
-    /**
      * 测试有无事务的效果。
      *
      * @author yihonglei
@@ -39,6 +25,20 @@ public class TransactionTest {
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         AccountService service = context.getBean(AccountService.class);
         service.addAccount("yihonglei", 10000);
+    }
+
+    /**
+     * 测试新开一个事务的效果。
+     *
+     * @author yihonglei
+     * @date 2019/1/15 11:34
+     */
+    @Test
+    public void createUser() {
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserService service = context.getBean(UserService.class);
+        service.createUser("yihonglei");
     }
 
     /**
