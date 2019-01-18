@@ -4,7 +4,7 @@
 
   项目名没有xml字样的，均基于注解方式实现;
 
-## 基础实战篇
+## 基础篇
 
 1）Spring IOC自动装配bean https://blog.csdn.net/yhl_jxy/article/details/78781927
 
@@ -20,13 +20,13 @@
 
 7）Spring事务实战 https://blog.csdn.net/yhl_jxy/article/details/86539400
 
-## 高级进阶篇
+## 进阶篇
 
 1）JDK动态代理实现原理(jdk8) https://blog.csdn.net/yhl_jxy/article/details/80586785
 
 2）CGLIB动态代理实现原理 https://blog.csdn.net/yhl_jxy/article/details/80633194
 
-## 源码分析篇
+## 源码篇
 
 1）Spring源码--BeanFactory和FactoryBean区别 https://blog.csdn.net/yhl_jxy/article/details/80991201
 
