@@ -25,7 +25,7 @@ public class AccountServiceImpl implements AccountService {
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void addAccount(String userName, int initMoney) {
         String accountName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        jdbcTemplate.update("insert INTO account (accountName,userName,money) VALUES (?,?,?)", accountName, userName, initMoney);
+        jdbcTemplate.update("INSERT INTO account (accountName,userName,money) VALUES (?,?,?)", accountName, userName, initMoney);
 
         // 人为报错抛异常，使用事务时，事务回滚，插入失败，如果不使用事务，则插入成功。
 //        int i = 1/0;
