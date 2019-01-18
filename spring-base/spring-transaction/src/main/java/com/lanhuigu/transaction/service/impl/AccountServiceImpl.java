@@ -34,18 +34,4 @@ public class AccountServiceImpl implements AccountService {
 //        int i = 1/0;
     }
 
-    @Override
-    @Transactional
-    public List<Account> queryAccount(String userName) {
-        List<Account> list = jdbcTemplate.queryForList("SELECT * from account where userName=?", Account.class, userName);
-        Arrays.toString(list.toArray());
-        return list;
-    }
-
-    @Override
-    @Transactional
-    public int updateAccount(String userName, int money) {
-        return jdbcTemplate.update("SELECT * from account set money=money+? where userName=?", money, userName);
-    }
-
 }
