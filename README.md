@@ -26,6 +26,8 @@
 
 2）CGLIB动态代理实现原理 https://blog.csdn.net/yhl_jxy/article/details/80633194
 
+3）JDK和CGLIB动态代理区别 https://blog.csdn.net/yhl_jxy/article/details/80635012
+
 ## 源码篇
 
 1）Spring源码--BeanFactory和FactoryBean区别 https://blog.csdn.net/yhl_jxy/article/details/80991201
