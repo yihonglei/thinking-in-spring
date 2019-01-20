@@ -13,7 +13,7 @@ import java.lang.reflect.Proxy;
  * 4.通过构造函数获得代理对象并将自定义的InvocationHandler实例对象传为参数传入
  * 5.通过代理对象调用目标方法
  */
-public class MyProxyTest {
+public class JDKProxyTest {
     public static void main(String[] args)
             throws NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException {
         // =========================第一种==========================
