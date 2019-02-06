@@ -13,6 +13,7 @@ public class ConstructorTest {
 
     /**
      * 造器注入Bean
+     *
      * @author yihonglei
      * @date 2018/11/5 19:42
      */
@@ -23,13 +24,14 @@ public class ConstructorTest {
                 new ClassPathXmlApplicationContext("applicationContext-Constructor-Bean.xml");
         // 从容器中获取bean
         SelfIntroductionService selfIntroductionService
-                = (SelfIntroductionService)context.getBean("selfIntroductionService");
+                = (SelfIntroductionService) context.getBean("selfIntroductionService");
         // 调用自我介绍
         selfIntroductionService.selfIntroduction();
     }
 
     /**
      * 造器注入常量
+     *
      * @author yihonglei
      * @date 2018/11/5 19:42
      */

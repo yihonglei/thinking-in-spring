@@ -1,8 +1,5 @@
 package com.lanhuigu.spring;
 
-import com.lanhuigu.spring.entity.Collection;
-import com.lanhuigu.spring.entity.PersonSetter;
-import com.lanhuigu.spring.setter.SelfIntroductionService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -16,6 +13,7 @@ public class FactoryBeanTest {
 
     /**
      * 注入bean
+     *
      * @author yihonglei
      * @date 2018/11/5 19:38
      */

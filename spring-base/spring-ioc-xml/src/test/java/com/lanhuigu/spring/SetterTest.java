@@ -14,6 +14,7 @@ public class SetterTest {
 
     /**
      * 注入bean
+     *
      * @author yihonglei
      * @date 2018/11/5 19:38
      */
@@ -24,13 +25,14 @@ public class SetterTest {
                 new ClassPathXmlApplicationContext("applicationContext-Setter-Bean.xml");
         // 从容器中获取bean
         SelfIntroductionService selfIntroductionService
-                = (SelfIntroductionService)context.getBean("selfIntroductionService");
+                = (SelfIntroductionService) context.getBean("selfIntroductionService");
         // 调用自我介绍
         selfIntroductionService.selfIntroduction();
     }
 
     /**
      * 注入字面量
+     *
      * @author yihonglei
      * @date 2018/11/5 19:38
      */
@@ -50,6 +52,7 @@ public class SetterTest {
 
     /**
      * 注入集合
+     *
      * @author yihonglei
      * @date 2018/11/5 19:38
      */
