@@ -5,10 +5,14 @@ import org.springframework.stereotype.Component;
 
 /**
  * 注解@Component表明该类会作为组件类，并告知spring要为这个类创建bean。
+ *
+ * @author yihonglei
  */
 @Component
-public class HelloServiceImpl implements HelloService{
-    /** 测试自动装配 */
+public class HelloServiceImpl implements HelloService {
+    /**
+     * 测试自动装配
+     */
     @Autowired
     private HappyNewYear happyNewYear;
 

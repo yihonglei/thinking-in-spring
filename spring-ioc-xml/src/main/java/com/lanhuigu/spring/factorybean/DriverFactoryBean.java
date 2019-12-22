@@ -10,7 +10,6 @@ import java.sql.DriverManager;
  * https://blog.csdn.net/yhl_jxy/article/details/80991201
  *
  * @author yihonglei
- * @date 2019/1/13 11:25
  */
 public class DriverFactoryBean implements FactoryBean {
     private String jdbcUrl;

@@ -1,5 +1,8 @@
 package com.lanhuigu.spring.common;
 
+/**
+ * @author yihonglei
+ */
 public class HelloServiceImpl implements HelloService {
 
     @Override

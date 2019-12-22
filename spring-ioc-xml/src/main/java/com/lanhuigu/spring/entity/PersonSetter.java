@@ -2,6 +2,8 @@ package com.lanhuigu.spring.entity;
 
 /**
  * 个人信息（setter注入使用）
+ *
+ * @author yihonglei
  */
 public class PersonSetter {
 

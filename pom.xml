@@ -18,6 +18,7 @@
         <module>spring-transaction</module>
         <module>spring-datasource</module>
         <module>spring-quartz</module>
+        <module>spring-event</module>
     </modules>
     <!-- 版本配置 -->
     <properties>

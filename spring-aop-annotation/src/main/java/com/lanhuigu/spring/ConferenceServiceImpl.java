@@ -2,6 +2,9 @@ package com.lanhuigu.spring;
 
 import org.springframework.stereotype.Service;
 
+/**
+ * @author yihonglei
+ */
 @Service
 public class ConferenceServiceImpl implements ConferenceService {
 

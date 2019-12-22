@@ -5,6 +5,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 /**
  * 基于AnnotationConfigApplicationContext构建Spring环境
+ *
+ * @author yihonglei
  */
 public class AopTest2 {
 

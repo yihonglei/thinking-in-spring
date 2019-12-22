@@ -9,7 +9,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 事务测试
  *
  * @author yihonglei
- * @date 2019/1/15 11:34
  */
 public class TransactionTest {
 
@@ -17,7 +16,6 @@ public class TransactionTest {
      * 测试有无事务的效果。
      *
      * @author yihonglei
-     * @date 2019/1/15 11:34
      */
     @Test
     public void addAccount() {
@@ -31,7 +29,6 @@ public class TransactionTest {
      * 测试新开一个事务的效果。
      *
      * @author yihonglei
-     * @date 2019/1/15 11:34
      */
     @Test
     public void createUser() {
@@ -43,9 +40,8 @@ public class TransactionTest {
 
     /**
      * 演示事务失效效果。
-     * 
+     *
      * @author yihonglei
-     * @date 2019/1/15 11:38
      */
     @Test
     public void invalidate() {

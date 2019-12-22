@@ -8,6 +8,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 测试构造器注入（bean、字面量）
+ *
+ * @author yihonglei
  */
 public class ConstructorTest {
 
@@ -15,7 +17,6 @@ public class ConstructorTest {
      * 造器注入Bean
      *
      * @author yihonglei
-     * @date 2018/11/5 19:42
      */
     @Test
     public void testBean() {
@@ -33,7 +34,6 @@ public class ConstructorTest {
      * 造器注入常量
      *
      * @author yihonglei
-     * @date 2018/11/5 19:42
      */
     @Test
     public void testList() {

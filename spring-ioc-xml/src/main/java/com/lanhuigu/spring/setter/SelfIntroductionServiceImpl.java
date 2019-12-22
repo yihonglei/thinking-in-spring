@@ -2,6 +2,9 @@ package com.lanhuigu.spring.setter;
 
 import com.lanhuigu.spring.common.HelloService;
 
+/**
+ * @author yihonglei
+ */
 public class SelfIntroductionServiceImpl implements SelfIntroductionService {
     private HelloService helloService;
 

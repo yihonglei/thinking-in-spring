@@ -6,9 +6,13 @@ import java.lang.reflect.Proxy;
 
 /**
  * JDK动态代理类
+ *
+ * @author yihonglei
  */
 public class JDKProxy implements InvocationHandler {
-    /** 需要代理的目标对象 */
+    /**
+     * 需要代理的目标对象
+     */
     private Object targetObject;
 
     /**
@@ -31,7 +35,7 @@ public class JDKProxy implements InvocationHandler {
         // 设置方法的返回值
         Object ret = null;
         // 调用invoke方法，ret存储该方法的返回值
-        ret  = method.invoke(targetObject, args);
+        ret = method.invoke(targetObject, args);
         return ret;
     }
 

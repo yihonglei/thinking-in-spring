@@ -1,5 +1,8 @@
 package com.lanhuigu.spring.aop;
 
+/**
+ * @author yihonglei
+ */
 public class ConferenceServiceImpl implements ConferenceService {
 
     @Override

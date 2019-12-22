@@ -17,7 +17,6 @@ import java.sql.SQLException;
  * spring 编程示事物示例
  *
  * @author yihonglei
- * @date 2019/1/14 20:07
  */
 public class SpringTransactionTest {
 

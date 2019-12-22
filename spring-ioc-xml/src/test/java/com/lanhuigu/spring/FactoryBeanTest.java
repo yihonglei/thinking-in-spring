@@ -8,6 +8,8 @@ import java.sql.Driver;
 
 /**
  * 通过FactoryBean创建bean
+ *
+ * @author yihonglei
  */
 public class FactoryBeanTest {
 
@@ -15,7 +17,6 @@ public class FactoryBeanTest {
      * 注入bean
      *
      * @author yihonglei
-     * @date 2018/11/5 19:38
      */
     @Test
     public void testBean() {

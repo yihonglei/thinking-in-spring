@@ -7,8 +7,10 @@ import java.lang.reflect.Method;
 
 /**
  * 自定义MethodInterceptor，invokeSuper使用被代理后对象
+ *
+ * @author yihonglei
  */
-public class MyMethodInterceptor implements MethodInterceptor{
+public class MyMethodInterceptor implements MethodInterceptor {
 
     /**
      * sub：cglib生成的代理对象

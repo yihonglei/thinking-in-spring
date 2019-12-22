@@ -2,6 +2,8 @@ package com.lanhuigu.spring.entity;
 
 /**
  * 个人信息（构造器注入使用）
+ *
+ * @author yihonglei
  */
 public class PersonConstructor {
 

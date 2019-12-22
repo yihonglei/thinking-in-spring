@@ -11,7 +11,6 @@ import java.lang.reflect.Method;
  * 动态代理事务模拟
  *
  * @author yihonglei
- * @date 2019/1/14 20:36
  */
 public class ProxyDemo {
     public static void main(String[] args) {

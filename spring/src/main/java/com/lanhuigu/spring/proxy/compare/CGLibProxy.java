@@ -8,9 +8,13 @@ import java.lang.reflect.Method;
 
 /**
  * CGLibProxy动态代理类，invoke使用被代理对象
+ *
+ * @author yihonglei
  */
 public class CGLibProxy implements MethodInterceptor {
-    /** CGLib需要代理的目标对象 */
+    /**
+     * CGLib需要代理的目标对象
+     */
     private Object targetObject;
 
     public Object createProxyObject(Object obj) {

@@ -3,12 +3,15 @@ package com.lanhuigu.spring.factorybean;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author yihonglei
+ */
 @Component
-public class AppleFactoryBean implements FactoryBean{
+public class AppleFactoryBean implements FactoryBean {
 
     @Override
     public Object getObject() throws Exception {
-        return new AppleBean();
+        return new AppleBean("one", 1);
     }
 
     @Override

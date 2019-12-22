@@ -5,7 +5,9 @@ import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 /**
- *  注解@Aspect标识该类为切面类
+ * 注解@Aspect标识该类为切面类
+ *
+ * @author yihonglei
  */
 @Component
 @Aspect
@@ -48,7 +50,8 @@ public class PersonAspect {
      * 方法中内容本身也是空的，使用该切点的地方直接通过标识conference()引用切点表达式。
      */
     @Pointcut("execution(* com.lanhuigu.spring.ConferenceServiceImpl.conference(..))")
-    public void conference() {}
+    public void conference() {
+    }
 //
 //    /**
 //     * 开会之前--找个位置坐下

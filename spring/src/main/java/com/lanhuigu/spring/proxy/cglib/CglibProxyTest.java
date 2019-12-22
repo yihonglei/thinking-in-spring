@@ -3,6 +3,9 @@ package com.lanhuigu.spring.proxy.cglib;
 import net.sf.cglib.core.DebuggingClassWriter;
 import net.sf.cglib.proxy.Enhancer;
 
+/**
+ * @author yihonglei
+ */
 public class CglibProxyTest {
     public static void main(String[] args) {
         // 代理类class文件存入本地磁盘方便我们反编译查看源码
@@ -14,7 +17,7 @@ public class CglibProxyTest {
         // 设置enhancer的回调对象
         enhancer.setCallback(new MyMethodInterceptor());
         // 创建代理对象
-        HelloService proxy= (HelloService)enhancer.create();
+        HelloService proxy = (HelloService) enhancer.create();
         // 通过代理对象调用目标方法
         proxy.sayHello();
     }

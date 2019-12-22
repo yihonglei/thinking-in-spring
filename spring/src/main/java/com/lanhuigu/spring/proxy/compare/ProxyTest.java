@@ -2,6 +2,8 @@ package com.lanhuigu.spring.proxy.compare;
 
 /**
  * 代理模式[[ 客户端--》代理对象--》目标对象 ]]
+ *
+ * @author yihonglei
  */
 public class ProxyTest {
     public static void main(String[] args) {

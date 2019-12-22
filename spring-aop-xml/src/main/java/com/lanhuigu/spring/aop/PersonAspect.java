@@ -1,7 +1,9 @@
 package com.lanhuigu.spring.aop;
 
 /**
- *  切面类
+ * 切面类
+ *
+ * @author yihonglei
  */
 public class PersonAspect {
 

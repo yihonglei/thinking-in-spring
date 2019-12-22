@@ -6,7 +6,6 @@ import java.io.Serializable;
  * 账户实体
  *
  * @author yihonglei
- * @date 2019/1/14 20:15
  */
 public class Account implements Serializable {
     private int id;

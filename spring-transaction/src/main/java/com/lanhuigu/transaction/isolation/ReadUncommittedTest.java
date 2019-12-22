@@ -8,7 +8,6 @@ import java.sql.*;
  * 所以也叫脏读，这个隔离级别都是问题，一般实际不用。
  *
  * @author yihonglei
- * @date 2019/1/14 12:21
  */
 public class ReadUncommittedTest {
 
@@ -26,7 +25,7 @@ public class ReadUncommittedTest {
 
         // 创建数据库连接
         Connection connection =
-                DriverManager.getConnection("jdbc:mysql://localhost:3306/lanhuigu","root", "123456");
+                DriverManager.getConnection("jdbc:mysql://localhost:3306/lanhuigu", "root", "123456");
 
         return connection;
     }

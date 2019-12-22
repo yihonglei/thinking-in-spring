@@ -7,6 +7,8 @@ import java.util.Set;
 
 /**
  * Spring 注入集合
+ *
+ * @author yihonglei
  */
 public class Collection {
     private Set<String> set;

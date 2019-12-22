@@ -1,5 +1,8 @@
 package com.lanhuigu.spring.proxy.jdk;
 
+/**
+ * @author yihonglei
+ */
 public class HelloImpl implements IHello {
     @Override
     public void sayHello() {

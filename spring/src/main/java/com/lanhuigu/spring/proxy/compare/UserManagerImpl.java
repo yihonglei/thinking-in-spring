@@ -2,6 +2,8 @@ package com.lanhuigu.spring.proxy.compare;
 
 /**
  * 用户管理接口实现(被代理的实现类)
+ *
+ * @author yihonglei
  */
 public class UserManagerImpl implements IUserManager {
 

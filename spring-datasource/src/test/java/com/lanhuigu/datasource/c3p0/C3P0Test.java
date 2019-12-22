@@ -7,6 +7,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 测试C3P0数据源
+ *
+ * @author yihonglei
  */
 public class C3P0Test {
 

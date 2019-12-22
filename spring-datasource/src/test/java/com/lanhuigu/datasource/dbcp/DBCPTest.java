@@ -7,6 +7,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 测试DBCP数据源
+ *
+ * @author yihonglei
  */
 public class DBCPTest {
 

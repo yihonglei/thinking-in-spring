@@ -1,5 +1,8 @@
 package com.lanhuigu.transaction.service;
 
+/**
+ * @author yihonglei
+ */
 public interface UserService {
 
     void createUser(String userName);

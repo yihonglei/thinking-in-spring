@@ -9,10 +9,6 @@ import java.util.Date;
 
 /**
  * @author yihonglei
- * @version 1.0.0
- * @ClassName: HelloQuartz
- * @Package: com.lanhuigu.quartz
- * @date 2018/7/2 14:30
  */
 public class HelloQuartz implements Job {
     @Override

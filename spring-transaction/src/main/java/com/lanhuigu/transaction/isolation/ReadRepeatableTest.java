@@ -8,7 +8,6 @@ import java.sql.*;
  * 结果读出的数据不对，这个也成为幻读。这个也是MySQL的事务默认隔离级别。
  *
  * @author yihonglei
- * @date 2019/1/14 19:13
  */
 public class ReadRepeatableTest {
     static {
@@ -27,7 +26,7 @@ public class ReadRepeatableTest {
 
         // 创建数据库连接
         Connection connection =
-                DriverManager.getConnection("jdbc:mysql://localhost:3306/lanhuigu","root", "123456");
+                DriverManager.getConnection("jdbc:mysql://localhost:3306/lanhuigu", "root", "123456");
 
         return connection;
     }

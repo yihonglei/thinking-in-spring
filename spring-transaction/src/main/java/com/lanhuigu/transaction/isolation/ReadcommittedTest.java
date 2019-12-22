@@ -9,7 +9,6 @@ import java.sql.*;
  * 这是一个警告语。这个也是一般数据库的默认级别，但是不是MySQL的默认级别。
  *
  * @author yihonglei
- * @date 2019/1/14 19:07
  */
 public class ReadcommittedTest {
     static {
@@ -28,7 +27,7 @@ public class ReadcommittedTest {
 
         // 创建数据库连接
         Connection connection =
-                DriverManager.getConnection("jdbc:mysql://localhost:3306/lanhuigu","root", "123456");
+                DriverManager.getConnection("jdbc:mysql://localhost:3306/lanhuigu", "root", "123456");
 
         return connection;
     }

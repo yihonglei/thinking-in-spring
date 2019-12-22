@@ -16,7 +16,6 @@ import java.util.Date;
  * 用户
  *
  * @author yihonglei
- * @date 2019/1/15 14:37
  */
 @Service
 public class UserServiceImpl implements UserService {

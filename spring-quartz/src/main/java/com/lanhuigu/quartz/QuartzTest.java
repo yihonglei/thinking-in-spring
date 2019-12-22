@@ -11,10 +11,6 @@ import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
 
 /**
  * @author yihonglei
- * @version 1.0.0
- * @ClassName: QuartzTest
- * @Package: com.lanhuigu.quartz
- * @date 2018/7/2 14:29
  */
 public class QuartzTest {
     public static void main(String[] args) {
@@ -26,8 +22,8 @@ public class QuartzTest {
             Trigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "group1") // 定义name/group
                     .startNow() // 一旦加入scheduler，立即生效
                     .withSchedule(simpleSchedule() // 使用SimpleTrigger
-                    .withIntervalInSeconds(1) // 每隔一秒执行一次
-                    .repeatForever()) // 一直执行，奔腾到老不停歇
+                            .withIntervalInSeconds(1) // 每隔一秒执行一次
+                            .repeatForever()) // 一直执行，奔腾到老不停歇
                     .build();
 
             // 定义一个JobDetail

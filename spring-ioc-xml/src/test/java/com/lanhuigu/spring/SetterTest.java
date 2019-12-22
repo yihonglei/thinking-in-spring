@@ -9,6 +9,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 测试setter注入(bean、字面量、集合)
+ *
+ * @author yihonglei
  */
 public class SetterTest {
 
@@ -16,7 +18,6 @@ public class SetterTest {
      * 注入bean
      *
      * @author yihonglei
-     * @date 2018/11/5 19:38
      */
     @Test
     public void testBean() {
@@ -34,7 +35,6 @@ public class SetterTest {
      * 注入字面量
      *
      * @author yihonglei
-     * @date 2018/11/5 19:38
      */
     @Test
     public void testConstant() {
@@ -54,7 +54,6 @@ public class SetterTest {
      * 注入集合
      *
      * @author yihonglei
-     * @date 2018/11/5 19:38
      */
     @Test
     public void testList() {
