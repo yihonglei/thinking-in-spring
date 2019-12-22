@@ -23,7 +23,7 @@
     <!-- 版本配置 -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.3.18.RELEASE</spring.version>
+        <spring.version>5.2.2.RELEASE</spring.version>
         <junit-version>4.12</junit-version>
         <java.version>1.8</java.version>
         <aopalliance.version>1.0</aopalliance.version>
