@@ -7,13 +7,13 @@
     <!-- DBCP数据源配置 -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/lanhuigu_web" />
+        <property name="url" value="jdbc:mysql://localhost:3306/jpeony_web" />
         <property name="username" value="root" />
-        <property name="password" value="lanhuigu" />
+        <property name="password" value="jpeony" />
     </bean>
 
     <!-- HelloDAO bean定义 -->
-    <bean id="helloDAO" class="com.lanhuigu.datasource.dao.HelloDAO">
+    <bean id="helloDAO" class="com.jpeony.datasource.dao.HelloDAO">
         <property name="dataSource">
             <ref bean="dataSource"/>
         </property>

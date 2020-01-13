@@ -8,13 +8,13 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/lanhuigu_web"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/jpeony_web"/>
         <property name="user" value="root"/>
-        <property name="password" value="lanhuigu"/>
+        <property name="password" value="jpeony"/>
     </bean>
 
     <!-- HelloDAO bean定义 -->
-    <bean id="helloDAO" class="com.lanhuigu.datasource.dao.HelloDAO">
+    <bean id="helloDAO" class="com.jpeony.datasource.dao.HelloDAO">
         <property name="dataSource">
             <ref bean="dataSource"/>
         </property>

@@ -73,7 +73,7 @@
     </logger>
 	
 	
-	<logger name="com.lanhuigu" level="DEBUG" additivity="false">
+	<logger name="com.jpeony" level="DEBUG" additivity="false">
         <appender-ref ref="file" />
         <appender-ref ref="STDOUT" />
     </logger>

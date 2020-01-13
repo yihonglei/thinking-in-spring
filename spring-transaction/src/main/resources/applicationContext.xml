@@ -17,14 +17,14 @@
     <context:annotation-config/>
 
     <!-- 扫描service下的文件，将@Service注解类加载到IOC容器中 -->
-    <context:component-scan base-package="com.lanhuigu.transaction.service.**"/>
+    <context:component-scan base-package="com.jpeony.transaction.service.**"/>
 
     <!-- 开启代理 -->
     <aop:aspectj-autoproxy expose-proxy="true"/>
 
     <!-- 数据源配置 -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <constructor-arg name="url" value="jdbc:mysql://localhost:3306/lanhuigu"/>
+        <constructor-arg name="url" value="jdbc:mysql://localhost:3306/jpeony"/>
         <constructor-arg name="username" value="root"/>
         <constructor-arg name="password" value="123456"/>
     </bean>
