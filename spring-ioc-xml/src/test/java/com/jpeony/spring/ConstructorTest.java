@@ -36,7 +36,7 @@ public class ConstructorTest {
      * @author yihonglei
      */
     @Test
-    public void testList() {
+    public void testConstant() {
         // 根据spring配置文件创建应用上下文
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext-Constructor-Constant.xml");

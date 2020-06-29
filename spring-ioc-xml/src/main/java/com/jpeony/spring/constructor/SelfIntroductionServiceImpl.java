@@ -8,7 +8,9 @@ import com.jpeony.spring.common.HelloService;
 public class SelfIntroductionServiceImpl implements SelfIntroductionService {
     private HelloService helloService;
 
-    // 构造器注入Bean
+    /**
+     * 构造器注入Bean
+     */
     public SelfIntroductionServiceImpl(HelloService helloService) {
         this.helloService = helloService;
     }
