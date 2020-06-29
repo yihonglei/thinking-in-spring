@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+/**
+ * @author yihonglei
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ApplicationConfig.class)
 public class AutowiredTest {
@@ -21,6 +24,8 @@ public class AutowiredTest {
     /**
      * 通过断言测试happyNewYear是否被注入到spring容器中。
      * 如果不为空，说明自动装配成功。
+     *
+     * @author yihonglei
      */
     @Test
     public void testHappyNewYear() {
@@ -31,6 +36,8 @@ public class AutowiredTest {
      * 调用HelloServiceImpl类中的testAutowired，
      * 而testAutowired方法中通过HappyNewYear类调用
      * 其sayHappyNewYear方法。
+     *
+     * @author yihonglei
      */
     @Test
     public void testAutowired() {

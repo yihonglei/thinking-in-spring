@@ -6,6 +6,9 @@ import com.jpeony.spring.factorybean.AppleBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * @author yihonglei
+ */
 public class FactoryBeanTest {
     public static void main(String[] args) throws Exception {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
@@ -15,7 +18,7 @@ public class FactoryBeanTest {
         System.out.println(context.getBean("&appleFactoryBean"));
 
         //
-        AppleFactoryBean factoryBean = (AppleFactoryBean)context.getBean("&appleFactoryBean");
+        AppleFactoryBean factoryBean = (AppleFactoryBean) context.getBean("&appleFactoryBean");
         //
         AppleBean object = (AppleBean) factoryBean.getObject();
         object.setAge(2);
