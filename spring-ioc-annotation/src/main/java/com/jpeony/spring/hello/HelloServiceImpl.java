@@ -21,6 +21,7 @@ public class HelloServiceImpl implements HelloService {
         this.happyNewYear = happyNewYear;
     }*/
 
+    @Override
     public void testAutowired() {
         happyNewYear.sayHappyNewYear();
     }

@@ -5,4 +5,5 @@ package com.jpeony.spring.hello;
  */
 public interface HelloService {
     void sayHello(String name);
+    void testAutowired();
 }

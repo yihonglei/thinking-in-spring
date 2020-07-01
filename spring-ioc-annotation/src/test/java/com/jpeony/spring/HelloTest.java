@@ -1,7 +1,7 @@
 package com.jpeony.spring;
 
 import com.jpeony.spring.hello.ApplicationConfig;
-import com.jpeony.spring.hello.HelloServiceImpl;
+import com.jpeony.spring.hello.HelloService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +40,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes = ApplicationConfig.class)
 public class HelloTest {
     @Autowired
-    private HelloServiceImpl helloService;
+    private HelloService helloService;
 
     @Test
     public void testHello() {

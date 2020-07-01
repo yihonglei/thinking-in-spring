@@ -2,6 +2,7 @@ package com.jpeony.spring;
 
 import com.jpeony.spring.hello.ApplicationConfig;
 import com.jpeony.spring.hello.HappyNewYear;
+import com.jpeony.spring.hello.HelloService;
 import com.jpeony.spring.hello.HelloServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
@@ -19,7 +20,7 @@ public class AutowiredTest {
     @Autowired
     private HappyNewYear happyNewYear;
     @Autowired
-    private HelloServiceImpl helloService;
+    private HelloService helloService;
 
     /**
      * 通过断言测试happyNewYear是否被注入到spring容器中。

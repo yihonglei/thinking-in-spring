@@ -12,9 +12,9 @@ public class AopTest2 {
 
     @Test
     public void testAop() {
-        AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(AppConfig.class);
-
+        // 注解方式构建ApplicationContext
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        // 从容器获取Bean
         ConferenceService conferenceService = context.getBean(ConferenceService.class);
 
         conferenceService.conference();
