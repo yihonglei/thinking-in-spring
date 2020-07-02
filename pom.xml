@@ -31,7 +31,7 @@
         <cglib.version>3.2.5</cglib.version>
         <quartz.version>2.3.0</quartz.version>
         <log4j.version>1.2.17</log4j.version>
-        <mysql-connector-java.version>5.1.40</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.16</mysql-connector-java.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <commons-pool.version>1.4</commons-pool.version>
         <c3p0.version>0.9.1.2</c3p0.version>
