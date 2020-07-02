@@ -24,5 +24,4 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @ComponentScan("com.jpeony")
 public class AppConfig {
 
-
 }
