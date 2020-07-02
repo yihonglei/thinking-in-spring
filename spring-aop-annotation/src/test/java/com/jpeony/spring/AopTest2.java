@@ -20,4 +20,14 @@ public class AopTest2 {
         conferenceService.conference();
     }
 
+    @Test
+    public void testAopScan() {
+        // 注解方式构建ApplicationContext
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.jpeony");
+        // 从容器获取Bean
+        ConferenceService conferenceService = context.getBean(ConferenceService.class);
+
+        conferenceService.conference();
+    }
+
 }
