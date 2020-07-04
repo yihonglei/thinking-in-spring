@@ -11,9 +11,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class AnnotationTest {
     @Test
     public void testAnnotation() {
-        // IOC容器
+        // IOC容器（传入@ComponentScan对应的注解类AppConfig）
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.jpeony.spring.annotation");
+        // IOC容器（直接传入需要扫描的包路径）
+        // AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.jpeony.spring.annotation");
         // 获取bean
         HelloService helloService = (HelloService) context.getBean("helloService");
 
