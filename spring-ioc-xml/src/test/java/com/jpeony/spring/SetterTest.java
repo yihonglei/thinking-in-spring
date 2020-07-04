@@ -22,11 +22,9 @@ public class SetterTest {
     @Test
     public void testBean() {
         // 根据spring配置文件创建应用上下文
-        ApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext-Setter-Bean.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext-Setter-Bean.xml");
         // 从容器中获取bean
-        SelfIntroductionService selfIntroductionService
-                = (SelfIntroductionService) context.getBean("selfIntroductionService");
+        SelfIntroductionService selfIntroductionService = (SelfIntroductionService) context.getBean("selfIntroductionService");
         // 调用自我介绍
         selfIntroductionService.selfIntroduction();
     }
@@ -39,8 +37,7 @@ public class SetterTest {
     @Test
     public void testConstant() {
         // 根据spring配置文件创建应用上下文
-        ApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext-Setter-Constant.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext-Setter-Constant.xml");
         // 从容器中获取bean
         PersonSetter person = (PersonSetter) context.getBean("personSetter");
         // 打印个人属性
