@@ -48,6 +48,5 @@
 
 [Spring源码--AOP实现(2)--拦截器调用的实现](https://blog.csdn.net/yhl_jxy/article/details/81065722)
 
-
-
+[Spring源码-IOC容器实现-AnnotationConfigApplicationContext(注解方式)初始化](https://jpeony.blog.csdn.net/article/details/107122040)
 
