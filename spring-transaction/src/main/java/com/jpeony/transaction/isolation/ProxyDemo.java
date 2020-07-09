@@ -14,8 +14,7 @@ import java.lang.reflect.Method;
  */
 public class ProxyDemo {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         final UserService userSerivce = context.getBean(UserService.class);
 
         UserService proxyUserSerivce = (UserService) Proxy.newProxyInstance(ProxyDemo.class.getClassLoader(),

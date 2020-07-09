@@ -34,7 +34,6 @@ public class UserServiceImpl implements UserService {
      * 插入用户会失败，添加账户成功，因为addAccount是一个新事务，不受createUser事务控制。
      *
      * @author yihonglei
-     * @date 2019/1/15 11:30
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
@@ -56,7 +55,6 @@ public class UserServiceImpl implements UserService {
      * 2）事务方法必须为public的，否则事务也不会生效。
      *
      * @author yihonglei
-     * @date 2019/1/15 11:53
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)

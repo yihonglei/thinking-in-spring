@@ -14,7 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * spring 编程示事物示例
+ * spring 编程式事物示例
  *
  * @author yihonglei
  */
@@ -35,7 +35,6 @@ public class SpringTransactionTest {
      * 2）如果设置了保存点，可以选择回滚到保存点。
      *
      * @author yihonglei
-     * @date 2019/1/14 20:42
      */
     public static void main(String[] args) {
         final DataSource ds = new DriverManagerDataSource(url, user, password);
